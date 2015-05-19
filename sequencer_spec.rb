@@ -8,8 +8,9 @@ describe Sequencer do
 
   describe "#process" do
     let(:words) { '' }
+    let(:sequencer) { Sequencer.new }
 
-    subject { Sequencer.new.read(io: StringIO.new(words)).process }
+    subject { sequencer.read(io: StringIO.new(words)).process }
 
     context 'words with sequences occuring once only' do
       let(:words) { %w(abcdef ghijklm  nopqrstuv).join("\n") }
